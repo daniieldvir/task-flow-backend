@@ -7,10 +7,12 @@ exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const item_routes_1 = __importDefault(require("./routes/item.routes"));
+const user_routes_1 = __importDefault(require("./routes/user.routes"));
 exports.app = (0, express_1.default)();
 exports.app.use((0, cors_1.default)());
 exports.app.use(express_1.default.json());
 exports.app.use('/api', item_routes_1.default);
+exports.app.use("/api/users", user_routes_1.default);
 exports.app.get('/health', (_req, res) => {
     res.json({ status: 'ok' });
 });

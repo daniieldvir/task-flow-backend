@@ -13,7 +13,7 @@ export const createUser = (req: Request, res: Response) => {
         return res.status(400).json({ error: "Missing fields" });
     }
 
-    const user: User = { id: nextId++, username, password, role };
+    const user: User = { id: nextId++, username, password, };
     users.push(user);
     res.status(201).json(user);
 };
