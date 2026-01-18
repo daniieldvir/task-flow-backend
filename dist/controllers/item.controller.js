@@ -21,7 +21,6 @@ const getItems = (collection) => (req, res) => {
             pageSize: size,
         });
     }
-    // If no paging, return all data
     res.json(data);
 };
 exports.getItems = getItems;

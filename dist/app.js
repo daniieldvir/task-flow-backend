@@ -10,7 +10,6 @@ const item_routes_1 = __importDefault(require("./routes/item.routes"));
 exports.app = (0, express_1.default)();
 exports.app.use((0, cors_1.default)());
 exports.app.use(express_1.default.json());
-// כל ה-API שלנו נמצא תחת /api
 exports.app.use('/api', item_routes_1.default);
 exports.app.get('/health', (_req, res) => {
     res.json({ status: 'ok' });
