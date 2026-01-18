@@ -38,5 +38,8 @@ const controller = __importStar(require("../controllers/item.controller"));
 const router = (0, express_1.Router)();
 ["tasks", "alerts", "incidents"].forEach(collection => {
     router.get(`/${collection}`, controller.getItems(collection));
+    router.post(`/${collection}`, controller.createItem(collection));
+    router.put(`/${collection}/:id`, controller.updateItem(collection));
+    router.delete(`/${collection}/:id`, controller.deleteItem(collection));
 });
 exports.default = router;
