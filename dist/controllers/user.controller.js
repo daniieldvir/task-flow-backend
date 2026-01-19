@@ -12,7 +12,7 @@ const createUser = (req, res) => {
     if (!username || !password || !role) {
         return res.status(400).json({ error: "Missing fields" });
     }
-    const user = { id: nextId++, username, password, role };
+    const user = { id: nextId++, username, password, };
     user_1.users.push(user);
     res.status(201).json(user);
 };
